@@ -92,6 +92,7 @@ export default {
         height: 100%;
         background-color: #fff;
         z-index: 999;
+        margin-left:-1%;
     }
     .close-talion{
         color: #42bd56;

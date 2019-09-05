@@ -10,7 +10,7 @@
             <img src="../../static/img/loading.gif" />
         </div>
         <dir v-for="(v,i) in obj" :key="i">
-            <router-link to="/detail">
+            <router-link :to="{path:'/detail',query:{id:v.id}}">
                 <list :title="v.title" :imgsrc="v.image" :content="v.content" :name="v.fee_str"></list>
             </router-link>
         </dir>
@@ -46,7 +46,7 @@ export default {
             method:"get",
             url:"/home"
         }).then((data)=>{
-            console.log(data.data.shouye);
+            // console.log(data.data.shouye);
             this.obj=data.data.shouye;
         })
     }

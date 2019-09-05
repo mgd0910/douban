@@ -1,7 +1,7 @@
 <template>
     <div class="download-app">
         <div class="info">
-            <img src="../../static/img/3.gif">
+            <img src="../../static/img/4.gif">
             <div class="info-content">
                 <strong>豆瓣</strong>
                 <div>我们的精神角落</div>
