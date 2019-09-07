@@ -62,6 +62,7 @@ export default {
     }
 
     .content li{
+        padding:5% 0;
         border-bottom: 0.1px solid #f2f2f2;
         overflow: hidden;
 

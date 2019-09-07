@@ -34,36 +34,45 @@ export default {
     methods: {
         fun(i){
             // console.log(this.emailtxt+"----"+this.pwdtxt+"---"+this.unametxt);
-            var email=this.emailtxt;
-            var pwd=this.pwdtxt;
-            var uname=this.unametxt;
-            if(i=="1"){
-                this.axios({
-                    method:"get",
-                    url:"http://localhost:3000/get",
-                    params:{
-                        "email":email,
-                        "pwd":pwd,
-                        "uname":uname
-                    }
-                }).then((ok)=>{
-                    console.log(ok);
-                    window.location.href="/#/login"
-                })
-            }    
+            // var email=this.emailtxt;
+            // var pwd=this.pwdtxt;
+            // var uname=this.unametxt;
+            // if(i=="1"){
+            //     this.axios({
+            //         method:"get",
+            //         url:"http://localhost:3000/get",
+            //         params:{
+            //             "email":email,
+            //             "pwd":pwd,
+            //             "uname":uname
+            //         }
+            //     }).then((ok)=>{
+            //         console.log(ok);
+            //         window.location.href="/#/login"
+            //     })
+            // }    
             
+            // if(i=="0"){
+            //     var param=new URLSearchParams();
+            //     param.append("email",email);
+            //     param.append("pwd",pwd);
+            //     this.axios({
+            //         method:"post",
+            //         url:"http://localhost:3000/post",
+            //         data:param
+            //     }).then((ok)=>{
+            //         console.log(ok);
+            //         window.location.href="/#/home"
+            //     })
+            // }
+            if(i=="1"){
+                // window.location.href="/#/login"
+                alert("亲，注册成功")
+            }
+
             if(i=="0"){
-                var param=new URLSearchParams();
-                param.append("email",email);
-                param.append("pwd",pwd);
-                this.axios({
-                    method:"post",
-                    url:"http://localhost:3000/post",
-                    data:param
-                }).then((ok)=>{
-                    console.log(ok);
-                    window.location.href="/#/home"
-                })
+                // window.location.href="/#/home"
+                alert("亲，登录成功")
             }
         }
     }

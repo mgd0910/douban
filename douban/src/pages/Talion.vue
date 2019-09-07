@@ -1,163 +1,108 @@
 <template>
     <div class="talion">
-        <div class="header-bar">
-            <span class="close-talion" @click="closeTalion()">关闭</span>
-            <form class="search">
-                <input type="text" @keyup.enter="goSearch()">
-            </form>
+        <div class="con">
+            <go-back title="关闭"></go-back>
+            <input type="text" id="txtId">
         </div>
-        <ul>
-            <li>
-                <div>
-                    <a href="#">
-                        <strong style="color: #2384E8;">电影</strong>
-                        <span>影院热映</span>
-                    </a>
-                    <a href="#">
-                        <strong style="color: #E6467E;">同城</strong>
-                        <span>周末活动</span>
-                    </a>
-                    <a href="#" target="_blank">
-                        <strong style="color: #9F7860;">阅读</strong>
-                        <span>电子书</span>
-                    </a>
-                    <a href="#" target="_blank">
-                        <strong style="color: #E1644D;">东西</strong>
-                        <span>心爱之物</span>
-                    </a>
-                </div>
-            </li>
-            <li>
-                <div>
-                    <a href="#">
-                        <strong style="color:#7A6ADB;">电视</strong>
-                        <span>正在热播</span>
-                    </a>
-                    <a href="#">
-                        <strong style="color: #2AB8CC;">小组</strong>
-                        <span>志趣相投</span>       
-                    </a>
-                    <a href="#">
-                        <strong style="color: #5774C5;">游戏</strong>
-                        <span>虚拟世界</span>
-                    </a>
-                    <a href="#" target="_blank">
-                        <strong style="color:#40CFA9;">FM</strong>
-                        <span>红心歌单</span>
-                    </a>
-                </div>
-            </li>
-            <li>
-                <div>
-                    <a href="#" target="_blank">
-                        <strong style="color: #9F7860;">图书</strong>
-                        <span>畅销排行</span>
-                    </a>
-                    <a href="#" target="_blank">
-                        <strong style="color: #F48F2E;">音乐</strong>
-                        <span>新碟榜</span>
-                    </a>
-                    <a href="#" target="_blank">
-                        <strong style="color:  #596CDD;">应用</strong>
-                        <span>玩手机</span>
-                    </a>
-                    <a href="#" target="_blank">
-                        <strong style="color: #42BD56;">市集</strong>
-                        <span>购买原创</span>
-                    </a>
-                </div>
-            </li>
-        </ul>
+        <nav-con :items="arr"></nav-con>
+        <div class="navBottom">
+            <div class="nav-item">
+                <router-link to="/reg">注册帐号</router-link>
+                <router-link to="/login">登录豆瓣</router-link>
+            </div>
+            <div class="nav-item">
+                <router-link to="/home">使用桌面版</router-link>
+                <router-link to="/home">使用豆瓣App</router-link>
+            </div>
+        </div>
     </div>
 </template>
 
 <script>
-
+import GoBack from '../components/GoBack'
+import NavCon from '../components/NavCon'
 export default {
-    // name:"Talion",
-    
-    methods: {
-        closeTalion(){
-            this.$emit("closeTalion")
+    components: {
+        GoBack,
+        NavCon
+    },
+    data(){
+        return{
+            arr:[]
         }
+    },
+    created () {
+        this.axios({
+            method:"get",
+            url:"/talion"
+        }).then((data)=>{
+            // console.log(data.data.talion)
+            this.arr=data.data.talion
+        })
     }
 }
 </script>
 
 <style scoped>
-    .talion{
+    .con {
+        width: 100%;
+        height: 0.48rem;
         position: fixed;
         top: 0;
-        width: 100%;
-        height: 100%;
-        background-color: #fff;
-        z-index: 999;
-        margin-left:-1%;
-    }
-    .close-talion{
-        color: #42bd56;
-        font-size: 0.16rem;
-    }
-
-    .search {
-        flex: 1;
-        width: 100%;
-        padding-left: 0.1rem;
-    }
-
-    input{
-        box-sizing: border-box;
-        border: 0;
-        background: url(../../static/img/3.gif) no-repeat 50% #f3f3f3;
-        background-size: 0.173rem;
-        border-radius: 0.03rem;
-        width: 100%;
-        height: 0.32rem;
-        font-size: 0.14rem;
-    }
-
-    input::focus {
-        background: #f3f3f3;
-    }
-
-    ul{
+        right: 0;
+        bottom: 0;
+        left: 0;
         display: flex;
-        justify-content: space-around;
-        padding-top: 0.25rem;
+        align-items: center;
+        padding: 0 0.1rem;
+        background-color: #ffffff;
+        font-size: 0.16rem;
+        border-bottom: 0.01rem solid #f3f3f3;
     }
 
-    li{
-        width: 33.33%;
+    .con span{
+        display:inline-block;
+        margin-left: 0.1rem;
+        font-size:0.14rem;
+        float:left;
     }
 
-    div{
-        position: relative;
-        float: left;
-        left: 50%;
-        top: 0;
+    .con input {
+        margin-left: 0.1rem;
+        width: 2.97rem;
+        height: 0.3rem;
+        border: none;
+        background:url(../../static/img/3.gif) no-repeat 50% #f3f3f3;
+        /* outline: none; */
     }
 
-    a {
-        position: relative;
-        left: -50%;
-        top: 0;
-        display: block;
-        margin-bottom: 0.25rem;
-        text-align: center;
+    .navBottom {
+        font-size: 0;
+        width: 100%;
+        border-bottom: 0.01rem solid #f3f3f3;
     }
-
-    strong {
-        display: block;
-        font-weight: 400;
-        font-size: 0.24rem;
-        line-height: 0.28rem;
-    }
-
-    span {
-        display: block;
-        color: #999;
-        height: 0.17rem;
-        font-size: 0.12rem;
-        letter-spacing: 0.01rem;
-    }
+.navBottom .nav-item {
+  border-top: 0.01rem solid #f3f3f3;
+  padding: 0.13rem 0;
+  text-align: center;
+}
+.navBottom .nav-item a {
+  width: 50%;
+  display: inline-block;
+  margin: 0 auto;
+  box-sizing: border-box;
+  font-size: 0.15rem;
+  color: #42bd56;
+}
+.navBottom .nav-item a {
+  width: 50%;
+  display: inline-block;
+  margin: 0 auto;
+  box-sizing: border-box;
+  font-size: 0.15rem;
+  color: #42bd56;
+}
+.navBottom .nav-item a:first-child {
+  border-right: 0.01rem solid #e5e5e5;
+}
 </style>

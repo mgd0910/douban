@@ -4,12 +4,12 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
-// 引入jquery
-import $ from 'jquery'
+// // 引入jquery
+// import $ from 'jquery'
 
 // 引入bootstrap
-import 'bootstrap/dist/css/bootstrap.min.css'
-import 'bootstrap/dist/js/bootstrap.min.js'
+// import 'bootstrap/dist/css/bootstrap.min.css'
+// import 'bootstrap/dist/js/bootstrap.min.js'
 
 //引入 Element
 import ElementUI from 'element-ui';

@@ -38,6 +38,9 @@ export default {
 }
 </script>
 <style scoped>
+    .status{
+        font-size:0px;
+    }
     .list-link{
         display: block;
         padding: 0.15rem 0;

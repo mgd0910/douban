@@ -9,6 +9,7 @@ import Talion from '../pages/Talion'
 import Status from '../pages/Status'
 import Group from '../pages/Group'
 import Detail from '../pages/Detail'
+import MovieDetail from '../pages/MovieDetail.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -57,6 +58,11 @@ export default new Router({
       path: '/detail',
       name: 'Detail',
       component: Detail
+    },
+    {
+      path: '/moviedetail',
+      name: 'MovieDetail',
+      component: MovieDetail
     }
   ]
 })

@@ -1,33 +1,32 @@
 <template>
     <div>
-        <el-rate v-model="value" disabled show-score text-color="#ff9900" score-template="{value}"> </el-rate>
+        <el-rate v-model="value" disabled show-score text-color="#ff9900" :score-template="valueb"> </el-rate>
     </div>
 </template>
 
 <script>
 export default {
-    // data() {
-    //   return {
-    //     value: 3.7
-    //   }
-    // }
+    
     computed: {
         value(){
             return parseFloat((this.values/2).toFixed(1))
+        },
+
+        valueb(){
+            return this.values.toString();
         }
     },
+    
     props:{
         values:{
-            type:Number,
-            required:true
+            type:[String,Number],
+            required:true,
+            default:4.3
         }
     }
 }
 </script>
 
-<style>
-    .el-rate__icon{
-        font-size: .14rem;
-        margin-right: 0;
-    }
+<style scoped>
+   
 </style>

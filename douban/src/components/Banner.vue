@@ -50,6 +50,11 @@ export default {
         color: #2ca532;
     }
 
+    .button-wrapper {
+        font-size:0px;
+    }
+
+
     .download{
         color: #fff;
         background: #42bd56;

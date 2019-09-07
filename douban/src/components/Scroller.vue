@@ -8,9 +8,11 @@
             <slot name="promItem"></slot>
             <ul class="hasCover" v-if="type == 'hasCover'">
                 <li v-for="(v,i) in items" :key="i">
-                    <img v-if="v.images" :src="v.images.large">
-                    <span class="title">{{v.title}}</span>
-                    <score :values="v.rating.average"></score>
+                    <router-link to="/moviedetail">
+                        <img v-if="v.images" :src="v.images.large">
+                        <span class="title">{{v.title}}</span>
+                        <score :values="v.rating.average"></score>
+                    </router-link>
                 </li>
             </ul>
             <ul class="onlyString" v-if="type == 'onlyString'">

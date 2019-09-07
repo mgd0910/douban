@@ -408,7 +408,7 @@
             "rating": {
                 "max": 10,
                 "numRaters": 92,
-                "average": "7.3",
+                "average":"7.3",
                 "min": 0
             },
             "subtitle": "非虚构创作指南",

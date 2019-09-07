@@ -1,7 +1,5 @@
 <template>
-    
-        <span @click="fun()">取消</span>
-
+        <span @click="fun()">{{title}}</span>
 </template>
 
 <script>
@@ -9,6 +7,12 @@ export default {
     methods:{
         fun(){
             this.$router.go(-1);
+        }
+    },
+    props:{
+        title:{
+            type:String,
+            required:true
         }
     }
 }

@@ -126,6 +126,10 @@ export default {
         margin-right: 0.2rem;
         font-size: 0.14rem;
     }
+    .info .btn{
+        display: inline-block;
+        margin-right:10%;
+    }
     .info .btn i{
         font-style: normal;
         color: #ccc;

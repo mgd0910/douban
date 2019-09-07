@@ -13,9 +13,9 @@
                 <div class="promItem"  slot="promItem">
                     <img class="corver" src="../../static/img/1.jpg">
                     <div class="content"  slot="promItem">
-                    <span class="price">¥ 68</span>
-                    <p class="name">造物</p>
-                    <p class="info">改变世界的万物图典，3000幅图里的发明与冒险</p>
+                        <span class="price">¥ 68</span>
+                        <p class="name">造物</p>
+                        <p class="info">改变世界的万物图典，3000幅图里的发明与冒险</p>
                     </div>
                 </div>
             </scroller>
@@ -109,7 +109,9 @@ export default {
 </script>
 
 <style scoped>
-
+    .book{
+        font-size:0px;
+    }
     .more{
         margin-top:0.48rem;
     }

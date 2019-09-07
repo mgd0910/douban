@@ -52,4 +52,8 @@ export default {
   li{
     list-style: none;
   }
+  .el-rate__icon{
+    font-size: .14rem !important;
+    margin-right: 0 !important;
+  }
 </style>

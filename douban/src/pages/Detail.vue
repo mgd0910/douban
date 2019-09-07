@@ -66,9 +66,7 @@
       </div>
       <div class="describe">
         <h2>活动详情</h2>
-        <div class="content">
-          {{obj.content}}
-        </div>
+        <div class="content" v-html="obj.content"></div>
       </div>
     </div>
     <download-app></download-app>
@@ -110,7 +108,9 @@ export default {
 </script>
 
 <style scoped>
-
+.detail{
+  font-size:0;
+}
 .loging-box img{
     margin:0 auto;
 }

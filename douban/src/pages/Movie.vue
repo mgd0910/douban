@@ -111,6 +111,9 @@ export default {
 </script>
 
 <style scoped>
+    .movie{
+        font-size:0px;
+    }
     .more{
         margin-top:0.48rem;
     }

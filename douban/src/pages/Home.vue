@@ -9,11 +9,11 @@
         <div class="loging-box" v-if="obj.length<1?true:false">
             <img src="../../static/img/loading.gif" />
         </div>
-        <dir v-for="(v,i) in obj" :key="i">
+        <div v-for="(v,i) in obj" :key="i">
             <router-link :to="{path:'/detail',query:{id:v.id}}">
                 <list :title="v.title" :imgsrc="v.image" :content="v.content" :name="v.fee_str"></list>
             </router-link>
-        </dir>
+        </div>
         
     </div>
 </template>
@@ -54,7 +54,9 @@ export default {
 </script>
 
 <style scoped>
-
+.pages-view{
+    font-size:0px;
+}
 .loging-box img{
     margin:0 auto;
 }

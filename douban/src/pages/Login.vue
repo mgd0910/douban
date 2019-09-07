@@ -1,7 +1,7 @@
 <template>
 <div>
     <div class="bigbox">
-        <go-back></go-back>
+        <go-back title="取消"></go-back>
         <h1>登录豆瓣</h1>
     </div>
     <div class="meun">
