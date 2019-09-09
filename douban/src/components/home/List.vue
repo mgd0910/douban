@@ -4,7 +4,7 @@
             <div class="content">
                 <img :src="imgsrc">
                 <h3>{{title}}</h3>
-                <p>{{content}}</p>
+                <p v-html="content"></p>
             </div>
             <div class="author">
                 <span>{{name}}</span>
